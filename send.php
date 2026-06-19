@@ -30,17 +30,17 @@ try{
         'user_agent'    => $_SERVER['HTTP_USER_AGENT'] ?? null,
         'ip'            => $ip,
 
-        'utm_source'    => $_GET['utm_source'] ?? null,
+        'utm_source'    => $_POST['utm_source'] ?? null,
         'utm_medium'    => $_GET['utm_medium'] ?? null,
         'utm_campaign'  => $_GET['utm_campaign'] ?? null,
         'utm_term'      => $_GET['utm_term'] ?? null,
         'utm_content'   => $_GET['utm_content'] ?? null,
 
-        'sub_id'        => $_GET['sub_id'] ?? null,
-        'sub_id_1'      => $_GET['sub_id_1'] ?? null,
-        'sub_id_2'      => $_GET['sub_id_2'] ?? null,
-        'sub_id_3'      => $_GET['sub_id_3'] ?? null,
-        'sub_id_4'      => $_GET['sub_id_4'] ?? null,
+        'sub_id'        => $_POST['sub_id'] ?? null,
+        'sub_id_1'      => $_POST['sub_id_1'] ?? null,
+        'sub_id_2'      => $_POST['sub_id_2'] ?? null,
+        'sub_id_3'      => $_POST['sub_id_3'] ?? null,
+        'sub_id_4'      => $_POST['sub_id_4'] ?? null,
     );
 
     $stream_id = '405459';
@@ -52,7 +52,7 @@ try{
     $lead = $apiConnector->create($data);
 
     if( $lead ){
-        header('Location: success.html?id='.$lead->id);
+        header('Location: success.php?id='.$lead->id);
     }
 
     //echo "Lead ID #".$lead->id.". Status ".$lead->status;
