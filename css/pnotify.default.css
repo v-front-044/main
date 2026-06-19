@@ -1,0 +1,166 @@
+.ui-pnotify {
+	top: 25px;
+	right: 25px;
+	position: absolute;
+	height: auto;
+	/* Ensures notices are above everything */
+	z-index: 9999;
+	border-radius: 6px;
+	border: 1px solid #60a5faa1;
+	backdrop-filter: blur(6px) saturate(180%);
+    -webkit-backdrop-filter: blur(6px) saturate(180%);
+    background-color: rgba(239, 246, 255, 0.8);
+}
+
+/* Hides position: fixed from IE6 */
+html>body .ui-pnotify {
+	position: fixed;
+}
+
+.ui-pnotify .ui-pnotify-shadow {
+	-webkit-box-shadow: 0px 2px 10px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow: 0px 2px 10px rgba(50, 50, 50, 0.5);
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ui-pnotify-container {
+	background-position: 0 0;
+	padding: 12px 12px 15px 40px;
+	height: 100%;
+	margin: 0;
+}
+
+.ui-pnotify-sharp {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.ui-pnotify-sticker {
+	position: absolute;
+	left: 8px;
+	width: 25px;
+	height: 25px;
+	background: url('pnotify-info.png') no-repeat;
+	background-size: cover;
+	animation: shake 6s 1;
+	animation-delay: 0.2s;
+}
+
+.ui-pnotify-closer {
+	float: right;
+	margin-left: 5px;
+	width: 12px;
+	height: 12px;
+	background: url('pnotify-closer.png') no-repeat;
+	background-size: cover;
+}
+
+.ui-pnotify-title {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.ui-pnotify-text {
+	display: block;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.ui-pnotify-title,
+.ui-pnotify-text {
+	color: black !important;
+}
+
+.ui-pnotify-icon,
+.ui-pnotify-icon span {
+	display: block;
+	float: left;
+	margin-right: .2em;
+}
+
+/* -- History Pulldown */
+.ui-pnotify-history-container {
+	position: absolute;
+	top: 0;
+	right: 18px;
+	width: 70px;
+	border-top: none;
+	padding: 0;
+	-webkit-border-top-left-radius: 0;
+	-moz-border-top-left-radius: 0;
+	border-top-left-radius: 0;
+	-webkit-border-top-right-radius: 0;
+	-moz-border-top-right-radius: 0;
+	border-top-right-radius: 0;
+	/* Ensures history container is above notices. */
+	z-index: 10000;
+}
+
+.ui-pnotify-history-container .ui-pnotify-history-header {
+	padding: 2px;
+	text-align: center;
+}
+
+.ui-pnotify-history-container button {
+	cursor: pointer;
+	display: block;
+	width: 100%;
+}
+
+.ui-pnotify-history-container .ui-pnotify-history-pulldown {
+	display: block;
+	margin: 0 auto;
+}
+
+/* Alternate stack initial positioning. */
+.ui-pnotify.stack-topleft,
+.ui-pnotify.stack-bottomleft {
+	left: 25px;
+	right: auto;
+}
+
+.ui-pnotify.stack-bottomright,
+.ui-pnotify.stack-bottomleft {
+	bottom: 25px;
+	top: auto;
+}
+
+@keyframes shake {
+	0% {
+	  transform: rotate(0deg);
+	}
+	5% {
+	  transform: rotate(-25deg);
+	}
+	10% {
+	  transform: rotate(20deg);
+	}
+	15% {
+	  transform: rotate(-20deg);
+	}
+	20% {
+	  transform: rotate(15deg);
+	}
+	25% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(0deg);
+	}
+  }
+
+@media screen and (max-width: 769px) {
+	.ui-pnotify-title {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	
+	.ui-pnotify-text {
+		font-size: 12px;
+		line-height: 16px;
+	}
+}
