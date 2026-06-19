@@ -42,6 +42,6 @@ function countdown() {
 }
 
 // Запускаем таймер при загрузке страницы
-window.onload = function () {
+window.addEventListener('load', function () {
   countdown();
-};
+});

@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-<!-- saved from url=(0014)about:internet -->
 <html lang="de">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Aurelix Oil</title>
   <link href="./css/css2.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/default-b7afbdd4.css">
   <link rel="stylesheet" href="./css/centrum-aea8943f.css">
-
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/header.css">
 
   <script src="./js/jquery-3.7.1.min.js"></script>
   <style>
     .bg-prod {
-      background-image: url("sonixine.png");
+      background-image: url("./img/sonixine.png");
       background-repeat: no-repeat;
       background-size: 300px;
+      background-position: center;
     }
 
     @media all and (max-width: 991px) {
@@ -1551,7 +1548,7 @@
                   </div>
                   <div class="phone-input" bis_skin_checked="1">
                     <label id="phone-error" class="errorValidate" for="phone" style="display: none"></label>
-                    <input id="phone-input" type="tel" placeholder="+30 ___ ___ ___" name="phone" autocomplete="off"
+                    <input id="phone-input" type="tel" placeholder="+30 ___ ___ ____" name="phone" autocomplete="off"
                       required="" value="" oldvalue="">
                   </div>
                   
@@ -1566,7 +1563,7 @@
                         digits = digits.slice(2);
                       }
 
-                      digits = digits.slice(0, 9);
+                      digits = digits.slice(0, 10);
 
                       let formatted = '+30';
 
@@ -1579,7 +1576,7 @@
                       }
 
                       if (digits.length > 6) {
-                        formatted += ' ' + digits.slice(6, 9);
+                        formatted += ' ' + digits.slice(6, 10);
                       }
 
                       return formatted;
@@ -1587,7 +1584,7 @@
 
                     function validatePolishPhone(value) {
                       const cleanValue = value.replace(/\s/g, '');
-                      const polishPhoneRegex = /^\+30\d{9}$/;
+                      const polishPhoneRegex = /^\+30\d{10}$/;
 
                       return polishPhoneRegex.test(cleanValue);
                     }
